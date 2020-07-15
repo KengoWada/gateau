@@ -20,7 +20,7 @@ export default {
     VerticalCard
   },
   computed: {
-    ...mapGetters(["cakes"])
+    ...mapGetters(["cakes", "getCart"])
   },
   methods: {
     async addToCart(product) {
