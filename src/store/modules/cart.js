@@ -1,3 +1,5 @@
+import { dbOrdersRef } from "../../firebase";
+
 const state = {
   cart: [],
 };
@@ -8,7 +10,18 @@ const getters = {
   },
 };
 
-const actions = {};
+const actions = {
+  makeOrder({ commit }, order) {
+    return dbOrdersRef
+      .add(order)
+      .then(() => {
+        commit("updateCart", []);
+      })
+      .catch(() => {
+        commit("updateCart", []);
+      });
+  },
+};
 
 const mutations = {
   updateCart(state, cart) {

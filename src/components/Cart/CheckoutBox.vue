@@ -100,12 +100,14 @@ export default {
         name: this.name,
         phoneNumber: "+256" + this.number,
         total: this.total,
-        items: this.getCart()
+        items: this.getCart().map(cake => {
+          cake.itemId = cake.id;
+          return cake;
+        })
       };
 
-      console.log(order);
+      this.$store.dispatch("makeOrder", order);
 
-      this.$store.commit("updateCart", []);
       this.$router.push("checkout");
     }
   }

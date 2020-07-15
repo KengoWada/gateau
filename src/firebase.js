@@ -8,3 +8,4 @@ firebase.initializeApp(config);
 const db = firebase.firestore();
 
 export const dbCakesRef = db.collection("cakes");
+export const dbOrdersRef = db.collection("orders");
