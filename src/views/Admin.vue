@@ -2,7 +2,9 @@
   <div>
     <vue-headful title="Admin | Gâteau" />
     <TopNav />
-    <router-view></router-view>
+    <v-container>
+      <router-view></router-view>
+    </v-container>
     <adminFooter />
   </div>
 </template>

@@ -19,7 +19,7 @@
 <script>
 import { mapGetters } from "vuex";
 
-import { dbCakesRef } from "./firebase";
+import { dbCakesRef, dbOrdersRef } from "./firebase";
 
 export default {
   name: "App",
@@ -28,6 +28,7 @@ export default {
   },
   created() {
     this.$store.dispatch("setCakesRef", dbCakesRef);
+    this.$store.dispatch("setOrdersRef", dbOrdersRef);
   }
 };
 </script>

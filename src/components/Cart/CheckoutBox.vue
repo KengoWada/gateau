@@ -100,6 +100,7 @@ export default {
         name: this.name,
         phoneNumber: "+256" + this.number,
         total: this.total,
+        createdAt: new Date(),
         items: this.getCart().map(cake => {
           cake.itemId = cake.id;
           return cake;
