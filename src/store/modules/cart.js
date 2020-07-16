@@ -11,15 +11,13 @@ const getters = {
 };
 
 const actions = {
-  makeOrder({ commit }, order) {
-    return dbOrdersRef
-      .add(order)
-      .then(() => {
-        commit("updateCart", []);
-      })
-      .catch(() => {
-        commit("updateCart", []);
-      });
+  async makeOrder({ commit }, order) {
+    try {
+      await dbOrdersRef.add(order);
+      commit("updateCart", []);
+    } catch (e) {
+      commit("updateCart", []);
+    }
   },
 };
 
